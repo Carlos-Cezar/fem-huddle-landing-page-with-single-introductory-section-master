@@ -1,0 +1,229 @@
+:root {
+  /* Headings */
+  --ff-poppins: "Poppins", sans-serif;
+
+  /* Body */
+  --ff-open-sans: "Open Sans", sans-serif;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+
+  --clr-primary-600: hsl(257, 40%, 49%);
+  --clr-primary-500: hsl(300, 69%, 71%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CSS Rest Above */
+body {
+  background-color: var(--clr-primary-600);
+  background-image: url(/images/bg-mobile.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: var(--ff-open-sans);
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+  color: #ffff;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 2.5rem;
+  text-align: center;
+  gap: 3rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: start;
+}
+
+.logo img {
+  height: 2.5rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero h1 {
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-semi-bold);
+  font-size: 1.5rem;
+}
+
+.register-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-btn a {
+  text-decoration: none;
+  border: none;
+  border-radius: 2rem;
+  color: var(--clr-primary-600);
+  background-color: #ffff;
+  padding: 0.7rem 6rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.register-btn a:hover {
+  background-color: var(--clr-primary-500);
+  color: #ffff;
+  transition: 250ms ease-out;
+}
+
+.hero-description p {
+  margin: 1rem 0;
+}
+
+.social-media-btns ul {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.social-media-btns li {
+  aspect-ratio: 1 / 1;
+  height: 2rem;
+}
+
+.social-media-btns img:hover {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(43%) saturate(845%)
+    hue-rotate(253deg) brightness(95%) contrast(90%);
+}
+
+@media (min-width: 800px) {
+  body {
+    background-image: url(/images/bg-desktop.svg);
+    background-size: cover;
+  }
+
+  main {
+    text-align: start;
+    height: 100vh;
+    gap: 1rem;
+    margin: 2.5rem;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    height: 80%;
+  }
+
+  .hero-img img {
+    width: 100%;
+  }
+
+  .hero-description {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+  }
+
+  .hero-description h1 {
+
+    font-size: 2.5rem;
+  }
+
+  .hero-description p {
+    font-size: 1.3rem;
+  }
+
+  .register-btn {
+    justify-content: start;
+  }
+
+  .register-btn a {
+    padding: 1.3rem 6rem;
+  }
+
+  .social-media-btns ul {
+    justify-content: end;
+    margin-right: 1rem;
+    gap: 1.2rem;
+  }
+}
+/* footer  */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
